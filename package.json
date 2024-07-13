@@ -1,0 +1,92 @@
+{
+  "name": "meta-context",
+  "description": "Primitive and flexible state management for React",
+  "type": "module",
+  "private": false,
+  "version": "1.0.11",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    },
+    "./shortcut": {
+      "require": "./dist/shortcut.cjs",
+      "import": "./dist/shortcut.js"
+    },
+    "./collect-event": {
+      "require": "./dist/collect-event.cjs",
+      "import": "./dist/collect-event.js"
+    }
+  },
+  "tsup": {
+    "format": [
+      "esm",
+      "cjs"
+    ],
+    "entry": {
+      "index": "./src/index.ts",
+      "shortcut": "./src/shortcut/index.tsx",
+      "collect-event": "./src/collect-event/index.tsx"
+    },
+    "external": [
+      "meta-context/collect-event",
+      "meta-context/shortcut"
+    ],
+    "splitting": false,
+    "minify": true,
+    "clean": true,
+    "dts": true
+  },
+  "files": [
+    "src",
+    "dist",
+    "LICENSE",
+    "README.md",
+    "package.json",
+    "tsconfig.json",
+    "package-lock.json"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "write": "prettier --write '**/*.{tsx,ts,md,json}'",
+    "build": "tsup"
+  },
+  "engines": {
+    "node": ">=12.20.0"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 120,
+    "arrowParens": "avoid"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lihz6/meta-context.git"
+  },
+  "keywords": [
+    "react",
+    "state",
+    "manager",
+    "management",
+    "recoil",
+    "store"
+  ],
+  "author": "Li Hongzhang",
+  "contributors": [],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lihz6/meta-context/issues"
+  },
+  "homepage": "https://github.com/lihz6/meta-context",
+  "devDependencies": {
+    "@types/node": "^20.16.5",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "prettier": "^3.3.3",
+    "tsup": "^8.2.4"
+  },
+  "peerDependencies": {
+    "@types/react": ">=17.0.0",
+    "react": ">=17.0.0"
+  }
+}
